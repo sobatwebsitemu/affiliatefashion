@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobat Affiliate | Premium Fashion Curation</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0D0D0D;       
+            --card-bg: #171717;       
+            --gold-accent: #D4AF37;   
+            --gold-muted: #AA8B2E;
+            --text-main: #F5F5F5;
+            --text-muted: #9CA3AF;
+            --border-subtle: rgba(212, 175, 55, 0.15);
+        }
+
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .logo, .category-title { 
+            font-family: 'Playfair Display', serif; 
+        }
+
+        /* --- Navigasi --- */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(13, 13, 13, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.2rem 10%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            color: var(--text-main); font-size: 1.5rem; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+        .logo span { color: var(--gold-accent); font-style: italic; }
+        
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+        .nav-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 0.85rem; 
+            text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold-accent); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center; 
+            text-align: center; position: relative;
+            background: linear-gradient(rgba(13,13,13,0.7), rgba(13,13,13,0.9)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1920') center/cover;
+        }
+        .hero-content { max-width: 800px; padding: 0 20px; z-index: 2; }
+        .hero h1 {
+            font-size: 4.5rem; font-weight: 400; margin-bottom: 1.5rem;
+            line-height: 1.1; letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem;
+            font-weight: 300; letter-spacing: 0.5px;
+        }
+        .btn-gold {
+            padding: 1rem 3rem; background: transparent; color: var(--gold-accent);
+            border: 1px solid var(--gold-accent); text-decoration: none;
+            text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;
+            transition: all 0.4s ease; display: inline-block;
+        }
+        .btn-gold:hover {
+            background: var(--gold-accent); color: var(--bg-dark);
+        }
+
+        /* --- Kategori & Produk --- */
+        .collection-section { max-width: 1200px; margin: 6rem auto; padding: 0 20px; }
+        
+        .category-title {
+            font-size: 2.5rem; text-align: center; margin: 4rem 0 2rem;
+            color: var(--gold-accent); font-style: italic; border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 1rem;
+        }
+
+        .products-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;
+        }
+        
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform 0.5s ease, border-color 0.5s ease;
+            display: flex; flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-8px); border-color: var(--gold-muted);
+        }
+        
+        .product-img { 
+            width: 100%; height: 350px; object-fit: cover; filter: grayscale(20%);
+            transition: filter 0.5s ease;
+        }
+        .product-card:hover .product-img { filter: grayscale(0%); }
+        
+        .product-info { padding: 2rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column;}
+        .brand-tag { 
+            font-size: 0.7rem; color: var(--gold-muted); text-transform: uppercase; 
+            letter-spacing: 2px; margin-bottom: 1rem; display: block;
+        }
+        .product-name { font-size: 1.4rem; margin-bottom: 1rem; font-weight: 400; }
+        .product-desc { 
+            font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem; 
+            font-weight: 300; flex-grow: 1;
+        }
+        
+        .btn-shop {
+            display: inline-block; padding: 0.8rem 2rem; width: 100%;
+            background: var(--text-main); color: var(--bg-dark); 
+            text-decoration: none; font-size: 0.8rem; letter-spacing: 1.5px;
+            text-transform: uppercase; transition: all 0.3s ease;
+        }
+        .btn-shop:hover { background: var(--gold-accent); color: var(--bg-dark); }
+
+        /* --- Footer & Social --- */
+        footer {
+            text-align: center; padding: 4rem 20px; border-top: 1px solid var(--border-subtle);
+            margin-top: 4rem;
+        }
+        .social-links { margin-bottom: 2rem; display: flex; justify-content: center; gap: 2rem;}
+        .social-links a { color: var(--text-muted); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s;}
+        .social-links a:hover { color: var(--gold-accent); }
+        .copyright { font-size: 0.8rem; color: var(--text-muted); opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Sobat <span>Fashion</span></div>
+        <ul class="nav-links">
+            <li><a href="#koleksi">The Collection</a></li>
+            <li><a href="#social">Connect</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Elegansi Dalam Setiap Langkah</h1>
+            <p>Kurasi eksklusif pakaian dan aksesori desainer untuk menyempurnakan gaya personal Anda. Temukan karya ikonis yang mendefinisikan tren musim ini.</p>
+            <a href="#koleksi" class="btn-gold">Eksplorasi Koleksi</a>
+        </div>
+    </header>
+
+    <section id="koleksi" class="collection-section">
+        
+        <h2 class="category-title">Essential Capsule</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&q=80" alt="Trench Coat" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Outerwear</span>
+                    <h3 class="product-name">Classic Double-Breasted Trench</h3>
+                    <p class="product-desc">Potongan ramping dengan material tahan cuaca. Esensial untuk gaya transisi musim yang elegan dan tak lekang waktu.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1604085449557-0470d06f6e52?w=500&q=80" alt="Silk Blouse" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Tops</span>
+                    <h3 class="product-name">Ivory Silk Satin Blouse</h3>
+                    <p class="product-desc">Kemeja sutra murni dengan drape lembut. Sempurna dipadukan dengan celana tailored untuk tampilan profesional.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500&q=80" alt="Tailored Trousers" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Bottoms</span>
+                    <h3 class="product-name">High-Waisted Wool Trousers</h3>
+                    <p class="product-desc">Celana panjang berpotongan lurus berbahan wol ringan. Siluet klasik untuk fondasi lemari pakaian Anda.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1588117260145-b4768e1964f4?w=500&q=80" alt="Blazer" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Outerwear</span>
+                    <h3 class="product-name">Oversized Structured Blazer</h3>
+                    <p class="product-desc">Blazer hitam tegas dengan bantalan bahu struktural. Memberikan statement instan pada gaya kasual Anda.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&q=80" alt="Slip Dress" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Dresses</span>
+                    <h3 class="product-name">Midnight Bias-Cut Slip Dress</h3>
+                    <p class="product-desc">Gaun malam minimalis berpotongan bias yang mengikuti lekuk tubuh. Cocok untuk acara makan malam elegan.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&q=80" alt="Leather Jacket" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Outerwear</span>
+                    <h3 class="product-name">Vintage-Wash Biker Jacket</h3>
+                    <p class="product-desc">Jaket kulit premium dengan detail perangkat keras perak. Memberikan sentuhan edgy pada gaun feminin.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title">Statement Accessories</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=500&q=80" alt="Designer Bag" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Bags</span>
+                    <h3 class="product-name">Quilted Leather Crossbody</h3>
+                    <p class="product-desc">Tas selempang ikonis dengan tekstur quilted dan rantai emas. Simbol kemewahan gaya modern.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=80" alt="Sunglasses" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Eyewear</span>
+                    <h3 class="product-name">Tortoiseshell Cat-Eye Frames</h3>
+                    <p class="product-desc">Kacamata hitam berbingkai asetat tebal dengan lensa anti-UV premium. Estetika retro yang mewah.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80" alt="Gold Jewelry" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Jewelry</span>
+                    <h3 class="product-name">18k Gold Layered Necklace</h3>
+                    <p class="product-desc">Kalung rantai susun dengan liontin mutiara air tawar. Detail sempurna untuk garis leher rendah.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&q=80" alt="Heels" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Footwear</span>
+                    <h3 class="product-name">Suede Slingback Pumps</h3>
+                    <p class="product-desc">Sepatu hak tinggi berbahan suede dengan desain pointed toe. Nyaman dipakai dari kantor hingga acara malam.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80" alt="Leather Belt" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Accessories</span>
+                    <h3 class="product-name">Monogram Buckle Belt</h3>
+                    <p class="product-desc">Ikat pinggang kulit anak sapi dengan gesper kuningan ikonis. Mendefinisikan siluet pinggang Anda.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=500&q=80" alt="Silk Scarf" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Accessories</span>
+                    <h3 class="product-name">Printed Mulberry Silk Scarf</h3>
+                    <p class="product-desc">Syal sutra bermotif artistik. Kenakan di leher, tas, atau sebagai aksen rambut yang anggun.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title">Contemporary Street</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=500&q=80" alt="Designer Sneakers" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Footwear</span>
+                    <h3 class="product-name">Chunky Platform Sneakers</h3>
+                    <p class="product-desc">Sepatu kets dengan sol tebal geometris. Perpaduan sempurna antara kenyamanan dan gaya urban.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1622519407650-3df9883f76a5?w=500&q=80" alt="Cargo Pants" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Bottoms</span>
+                    <h3 class="product-name">Satin Utility Cargo Pants</h3>
+                    <p class="product-desc">Celana kargo dengan sentuhan akhir satin mengilap. Eksperimen kontras antara utilitarian dan kemewahan.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="Crop Top" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Tops</span>
+                    <h3 class="product-name">Asymmetric Ribbed Knit</h3>
+                    <p class="product-desc">Atasan rajut bertekstur dengan garis leher asimetris yang unik. Menarik perhatian dengan siluet tak terduga.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&q=80" alt="Bucket Hat" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Headwear</span>
+                    <h3 class="product-name">Logo Canvas Bucket Hat</h3>
+                    <p class="product-desc">Topi kanvas bertekstur dengan bordir logo minimalis. Penutup gaya streetwear yang trendi.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?w=500&q=80" alt="Oversized Hoodie" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Tops</span>
+                    <h3 class="product-name">Heavyweight Cotton Hoodie</h3>
+                    <p class="product-desc">Hoodie berpotongan besar berbahan katun organik tebal. Menjaga kehangatan dengan estetika santai premium.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=500&q=80" alt="Denim Skirt" class="product-img">
+                <div class="product-info">
+                    <span class="brand-tag">Bottoms</span>
+                    <h3 class="product-name">Distressed Maxi Denim Skirt</h3>
+                    <p class="product-desc">Rok denim panjang dengan detail sobekan halus dan belahan depan. Tren Y2K yang diimajinasi ulang.</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer id="social">
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Pinterest</a>
+        </div>
+        <p class="copyright">&copy; 2026 Sobat Fashion Curation. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
