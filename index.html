@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobat Affiliate | Referensi Affiliate Produk Fashion Premium</title>
+    <title>Sobat Affiliate Kids | Referensi Affiliate Produk Anak Premium</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -64,7 +64,7 @@
         }
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            background: url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
             filter: brightness(0.25);
             z-index: 1;
         }
@@ -128,10 +128,10 @@
         }
         .product-img-container { 
             width: 100%; height: 280px; overflow: hidden; background: #05080F;
-            display: flex; justify-content: center; align-items: center;
+            display: flex; justify-content: center; align-items: center; padding: 2rem;
         }
         .product-image { 
-            width: 100%; height: 100%; object-fit: cover; 
+            max-width: 100%; max-height: 100%; object-fit: contain; 
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .product-card:hover .product-image { transform: scale(1.1); }
@@ -164,6 +164,7 @@
             overflow: hidden;
         }
         
+        /* Dekorasi Cahaya Latar Belakang */
         .social-section::before {
             content: ''; position: absolute; top: 30%; left: 30%;
             width: 300px; height: 300px; background: rgba(42, 171, 238, 0.15);
@@ -183,18 +184,23 @@
         
         .social-icon-wrapper {
             display: flex; flex-direction: column; align-items: center;
-            text-decoration: none; position: relative;
+            text-decoration: none;
+            position: relative;
         }
         
+        /* Wadah Kaca */
         .social-icon {
             width: 80px; height: 80px; border-radius: 25px; 
             display: flex; justify-content: center; align-items: center;
             margin-bottom: 1.5rem; position: relative;
+            
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             border-left: 1px solid rgba(255, 255, 255, 0.2);
+            
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             animation: floating 4s ease-in-out infinite;
@@ -206,22 +212,29 @@
 
         .social-icon svg.icon-svg {
             width: 34px; height: 34px; fill: rgba(255, 255, 255, 0.8);
-            transition: all 0.4s ease; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            transition: all 0.4s ease;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
         }
         
         .notification-badge {
             position: absolute; top: -5px; right: -5px;
-            width: 18px; height: 18px; background: #FF3B30; 
-            border-radius: 50%; border: 2px solid #111;
-            box-shadow: 0 0 15px rgba(255, 59, 48, 0.6); z-index: 10;
+            width: 18px; height: 18px; 
+            background: #FF3B30; 
+            border-radius: 50%;
+            border: 2px solid #111;
+            box-shadow: 0 0 15px rgba(255, 59, 48, 0.6);
+            z-index: 10;
             animation: pulse-red 2s infinite;
         }
 
         .social-label {
             color: var(--text-muted); text-transform: uppercase;
             font-size: 0.85rem; font-weight: 600; letter-spacing: 2.5px;
-            transition: all 0.3s ease; opacity: 0.7;
+            transition: all 0.3s ease;
+            opacity: 0.7;
         }
+        
+        /* --- ANIMASI HOVER --- */
         
         .social-icon-wrapper:hover .social-icon {
             animation-play-state: paused;
@@ -229,15 +242,30 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
-        .social-icon-wrapper:hover .telegram-icon { box-shadow: 0 20px 40px rgba(42, 171, 238, 0.4), inset 0 0 20px rgba(42, 171, 238, 0.3); border-color: rgba(42, 171, 238, 0.5); }
-        .social-icon-wrapper:hover .instagram-icon { box-shadow: 0 20px 40px rgba(225, 48, 108, 0.4), inset 0 0 20px rgba(225, 48, 108, 0.3); border-color: rgba(225, 48, 108, 0.5); }
-        .social-icon-wrapper:hover .youtube-icon { box-shadow: 0 20px 40px rgba(255, 0, 0, 0.4), inset 0 0 20px rgba(255, 0, 0, 0.3); border-color: rgba(255, 0, 0, 0.5); }
+        .social-icon-wrapper:hover .telegram-icon {
+            box-shadow: 0 20px 40px rgba(42, 171, 238, 0.4), inset 0 0 20px rgba(42, 171, 238, 0.3);
+            border-color: rgba(42, 171, 238, 0.5);
+        }
+        .social-icon-wrapper:hover .instagram-icon {
+            box-shadow: 0 20px 40px rgba(225, 48, 108, 0.4), inset 0 0 20px rgba(225, 48, 108, 0.3);
+            border-color: rgba(225, 48, 108, 0.5);
+        }
+        .social-icon-wrapper:hover .youtube-icon {
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.4), inset 0 0 20px rgba(255, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.5);
+        }
         
+        /* Warna SVG Asli muncul saat hover */
         .social-icon-wrapper:hover .telegram-icon svg.icon-svg { fill: var(--telegram-color); transform: scale(1.1); }
         .social-icon-wrapper:hover .instagram-icon svg.icon-svg { fill: #E1306C; transform: scale(1.1); }
         .social-icon-wrapper:hover .youtube-icon svg.icon-svg { fill: var(--youtube-color); transform: scale(1.1); }
         
-        .social-icon-wrapper:hover .social-label { color: var(--text-white); opacity: 1; transform: translateY(-3px); text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .social-icon-wrapper:hover .social-label {
+            color: var(--text-white);
+            opacity: 1;
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
         
         @keyframes floating {
             0% { transform: translateY(0px); }
@@ -294,244 +322,301 @@
     <header id="beranda" class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <span class="badge">Sobat Affiliate Fashion Premium Choice</span>
-            <h1>Elegansi & Pesona <span>Gaya Anda</span></h1>
-            <p>Temukan rekomendasi produk fashion premium terbaik yang meningkatkan kepercayaan diri, mendukung gaya hidup modern, dan menyempurnakan penampilan Anda. Investasi terbaik untuk gaya fashion Anda.</p>
+            <span class="badge">Sobat Affiliate Kids Premium Choice</span>
+            <h1>Keceriaan & Tumbuh Kembang <span>Si Kecil</span></h1>
+            <p>Temukan rekomendasi produk anak terbaik yang memicu kreativitas, mendukung aktivitas fisik, dan menemani imajinasi mereka. Investasi terbaik untuk masa depan buah hati Anda.</p>
             <a href="#koleksi" class="btn-main">Lihat Rekomendasi</a>
         </div>
     </header>
 
     <section id="koleksi" class="section-container">
         <div class="section-header">
-            <h2>Referensi Affiliate Produk Fashion</h2>
-            <p>Koleksi pilihan busana dan aksesoris fashion berkualitas tinggi untuk mendukung setiap penampilan elegan Anda.</p>
+            <h2>Referensi Affiliate Produk Anak</h2>
+            <p>Koleksi pilihan mainan edukasi dan perlengkapan anak berkualitas tinggi untuk mendukung setiap tahap emas pertumbuhan mereka.</p>
             <div class="divider"></div>
         </div>
 
         <div class="products-grid">
-            
+            <!-- Kartu Produk 1 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-822wj-mnd4n0ck1fcz51.webp" alt="Tas Selempang Kulit Premium" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-82250-mkdx1ckcaryedb.webp" alt="Balok Susun Premium" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Fashion Muslim</span>
-                    <h3 class="product-name">Resyahijab Pashmina Rayon Tencel Premium</h3>
-                    <p class="product-desc">Pasmina Kaos Tencel By Resyah Hijab, Pilihan Terbaik Bagi Kamu Yang Ingin Tampil Elegan Dan Kekinian
-Dengan Bentuk Persegi Panjang. Material Terbuat Dari Kaos Tencel Yg Ringan, Sejuk Dan Nyaman Di Pakai Seharian Berbahan Kayu Ecayptus, Eco Freindly, Cocok Bangat Untuk Kulit Sensitif Karna Mengandung Anti Bacterial Tidak Membuat Kepala Terasa Berat Atau Pusing Saat Di Pakai, Anti Bau Apek Tetap Segar Meski Terkena Sinar Matahari Atau Keringat, Menjaga Kepercayaan Diri Setiap Waktu.</p>
-                    <a href="https://s.shopee.co.id/9pbY6I7xOd" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">perlengkapan olahraga dan rekreasi</span>
+                    <h3 class="product-name">Kacamata Renang Anak Kiara dan Kian OL</h3>
+                    <p class="product-desc">Kacamata Renang Kiara dan Kian OL Dengan Fitur Anti Fog Protection Yang Membuat Penglihatan Anda Di Dalam Kolam Renang Tetap Jelas. Dengan Material Yang Lembut Membuat Anda Tetap Nyaman Menggunakan Kacamata Renang Ini. Dan Juga Design Yang Lucu Membuat Anak Menjadi Happy.</p>
+                    <a href="https://s.shopee.co.id/W3he7uHuz" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
             
+            <!-- Kartu Produk 2 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r990-m028oyxkeacf44.webp" alt="Jam Tangan Chronograph" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98s-ly617bnnu0ny13.webp" alt="Sepeda Anak Roda Tiga" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Busana Wanita</span>
-                    <h3 class="product-name">MISSCHICS - BATWING KNIT - OVERSIZE BLOUSE</h3>
-                    <p class="product-desc">Bahan Knit Ribby, Best Quality. Bahan Yg Kita Pake Super Halus Knit Nya, Gak Panas Gak Gerah, Mirip Knit2 Di Mal Mal.
-Ld Freesize (Lebarr Bgt Lho Ini Super Muat Jumbo), Muat Up To Bb 100kg Ya Pb 72 - 75cm
-Model Oversize Batwing Model Tangan Ada Ban Di Pergelangannya Jadi Wudhu Friendly Yaaa 
-Lingkar Lengan Besar Yaaa JD Aman Bgt Buat Yg Lengan Nya Gede
-Super Nyaman Dipake Everyday Bunda.</p>
-                    <a href="https://s.shopee.co.id/qgjOdKU1x" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Peralatan Rumah Tangga</span>
+                    <h3 class="product-name">Kotak Bekal Makan Anak</h3>
+                    <p class="product-desc">Megumi Character Duck Lunch Box Adalah Kotak Bekal Berbahan Stainless Steel Tebal Anti Tumpah Yang Memiliki Gambar Wajah Bebek Lucu Yang Sangat Cocok Untuk Kotak Bekal Anak Sekolah, Piknik, Maupun Kegiatan Lainnya Karena Mudah Dibawa Kemanapun.</p>
+                    <a href="https://s.shopee.co.id/9zumyT2Vka" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 3 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-8224x-mkc951qgclj7ee.webp" alt="Blazer Wanita Oversized" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m441dggfe7bt3e.webp" alt="Tablet Belajar Anak" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Pakaian Wanita</span>
-                    <h3 class="product-name">Caerys - Vina Top - Atasan Lengan Panjang Wanita</h3>
-                    <p class="product-desc">Bosan Dengan Kemeja Yang Itu-itu Aja? Saatnya Beralih Ke Vina Top Dari Caerys! . 
-Bahan Premium: Super Adem, Lembut Di Kulit, Dan Tidak Menerawang.desain Versatile: Cocok Untuk Outfit Ngantor (Wfo), Kuliah, Hingga Hangout Santai Di Akhir Pekan.siluet Elegan: Potongan Lengan Panjangnya Memberikan Kesan Jenjang Dan Rapi Seketika.padukan Dengan Celana Kulot Atau ROK Favoritmu Untuk Look Yang Langsung Effortlessly Stylish.</p>
-                    <a href="https://s.shopee.co.id/50WIMtt3Ig" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Mainan Edukasi</span>
+                    <h3 class="product-name">Papan Tulis Gambar Edukasi Anak</h3>
+                    <p class="product-desc">Produk Bermutu Tinggi Untuk Menggambar,membuat Tulisan,berhitung,persentasi,belajar Anak Dll. Permukaan Penulisan LCD Yang Sensitif. Mudah Dioperasikan Dan Efisiensi Tinggi..hapus Gambar Dengan Satu Tombol. Baterai Tahan Lama Desainnya Sangat Ramping Dan Ringkas..mudah Dibawa Dan Disimpan. Ringan Dan Portabel..cocok Untuk Sekolah,kantor,rumah, Dll.</p>
+                    <a href="https://s.shopee.co.id/2LVLopyv9j" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 4 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-8224o-mgo4ta1tbmkvc4.webp" alt="Sneakers Putih Klasik" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m67oj01jov287e.webp" alt="Boneka Beruang Interaktif" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Fashion Muslim</span>
-                    <h3 class="product-name">Mudy - Hijab Pashmina Ceruty Motif</h3>
-                    <p class="product-desc">Tampil Anggun Dan Stylish Dengan Hijab Pashmina Motif Dari Mudy Hijab Yang Didesain Khusus Untuk Wanita Aktif Yang Mengutamakan Kenyamanan Dan Gaya. Hijab Pashmina Motif: Fleksibel Dipakai Berbagai Gaya, Dari Casual Hingga Formal. Motif Sublim Printing: Warna Tajam Dan Awet, Tidak Luntur. Bahan Adem & Ringan: Nyaman Dipakai Seharian.</p>
-                    <a href="https://s.shopee.co.id/17cQM980h" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Perlengkapan Sekolah Anak</span>
+                    <h3 class="product-name">Tempat Alat Tulis Anak</h3>
+                    <p class="product-desc">Kotak Pensil Aimilo Hadir Dengan Desain Lucu Dan Kapasitas Besar Yang Membuat Belajar Jadi Lebih Menyenangkan! Lapisan Tunggalnya Yang Efisien Membantu Anak-anak Menyimpan Alat Tulis Dengan Rapi Tanpa Memakan Banyak Tempat. Tampilan Kartunnya Yang Cerah Membuatnya Disukai Anak-anak, Sementara Bahan Plastik Anti Air Menjadikannya Awet Dan Mudah Dibersihkan.</p>
+                    <a href="https://s.shopee.co.id/4VZqQpOS7m" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 5 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasd-m4lffguxzjw460.webp" alt="Kacamata Hitam Cat-Eye" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m7a7wupg8i079e.webp" alt="Set Alat Lukis Lengkap" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Aksesoris Gaya</span>
-                    <h3 class="product-name">Kacamata Hitam Elips Retro Pria-Wanita</h3>
-                    <p class="product-desc">Vibe Retro Era 90-an Yang Gak Pernah Gagal Bikin Kamu Keren! 😎🏖️perlindungan Maksimal: Dilengkapi Fitur Anti-uv Untuk Menangkal Terik Matahari Yang Silau.desain Elips Retro: Model Unisex Yang Cocok Untuk Bentuk Wajah Pria Maupun Wanita.nyaman & Ringan: Gagang Kokoh Tapi Ringan, Tidak Membuat Telinga Sakit Saat Dipakai Seharian.</p>
-                    <a href="https://s.shopee.co.id/5L98mTm2Tc" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Furnitur Anak</span>
+                    <h3 class="product-name">Meja Belajar Anak Multifungsi</h3>
+                    <p class="product-desc">Meja Lipat Serba Guna, Cocok Untuk Dijadikan Sebagai Meja Laptop, Meja Belajar Anak, Dan Lain Sebagainya. Selain Memiliki Bahan Yang Halus Dan Nyaman Beserta Design Yang Elegan, Meja Ini Juga Dilengkapi Dengan Slot Untuk Handphone/tablet & Slot Gelas. ( Disebelah Kanan ). Meja Ini Menjadi Pilihan Yang Terbaik Untuk Anda!</p>
+                    <a href="https://s.shopee.co.id/8pipbIhh1o" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 6 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-81ztg-mep8qv6ps35t47.webp" alt="Kemeja Flanel Premium" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/e13b180aa721f6829172f240946d34ee.webp" alt="Tenda Bermain Kastil" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Fashion Wanita (Tas)</span>
-                    <h3 class="product-name">Tas Bahu Les Catino Naya Braided Shoulder</h3>
-                    <p class="product-desc">Saatnya Tampil Classy Tanpa Usaha Lebih Dengan Naya Braided Shoulder Dari Les Catino! 👜✨. detail Braided Elegan: Aksen Anyaman Pada Tali Bahu Memberikan Sentuhan Premium Yang Unik.kapasitas Ideal: Muat Dompet, Ponsel, Kosmetik, Hingga Payung Kecil—rapi Dalam Satu Tas. Kulit Sintetis Premium: Mudah Dibersihkan, Tahan Lama, Dan Memiliki Kilau Yang Mewah. Dari Rapat Formal Di Kantor Hingga Dinner Romantis, Tas Ini Adalah Statement Piece Terbaikmu!</p>
-                    <a href="https://s.shopee.co.id/6pxwZgmTmu" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Alat Permainan Anak Edukatif</span>
+                    <h3 class="product-name">Mainan Edukasi Anak Sensory Path Space Engklek</h3>
+                    <p class="product-desc">Karpet Banner Main Anak Untuk Membantu Melatih Motorik Kasar, Bisa Bermain Sekaligus Belajar Dan Berolahraga, Juga Mengalihkan Anak Dari Ketergantungan Pada Gadget Dengan Berbagai Gerakan Dan Juga Edukasi Di Dalamnya. Cocok Untuk Anak Di Atas 2 Tahun.</p>
+                    <a href="https://s.shopee.co.id/8V5zD16IeJ" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 7 (Baru) -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-822wl-modnn6xd7uo026.webp" alt="Gaun Malam Satin" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk0-maxkuv63i2p047.webp" alt="Magnetic Tiles Building Blocks" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Fashion Wanita</span>
-                    <h3 class="product-name">Kalisha x Mima - Vanya Instan Bergo Bahan Rayon Viscose</h3>
-                    <p class="product-desc">Halo Bunda & Kakak! Sering Merasa Gerah Pakai Hijab Saat Cuaca Panas? Atau Ribet Cari Jarum Pentul Saat Buru-buru Ada Tamu Di Depan Rumah?vanya Instan Bergo (Kalisha X Mima) Hadir Jadi Penyelamat Harianmu! Dibuat Khusus Dari Bahan Rayon Viscose Premium Yang Terkenal Sangat Adem Dan Lembut Di Kulit.</p>
-                    <a href="https://s.shopee.co.id/gNJEs9Xaq" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Mainan Anak</span>
+                    <h3 class="product-name">Mainan Anak Pesawat Terbang</h3>
+                    <p class="product-desc">Pesawat Busa Tidak Hanya Bisa Terbang Dengan Senjata Peluncuran, Tapi Juga Bisa Terbang Dengan Melemparkannya Dengan Tangan. Mainan Yang Cocok Untuk Olahraga Luar Ruangan Anak-anak, Pemotretan Jarak Jauh Bisa Memakan Waktu 10-15 Meter. Tidak Diperlukan Baterai, Desain Tarik-keluar. Dengan Lampu, Bermain Di Malam Hari Lebih Keren.</p>
+                    <a href="https://s.shopee.co.id/1gFf7R9ck2" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 8 (Baru) -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7ras9-m5jq85aw7aoj58.webp" alt="Jaket Kulit Biker" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/b5373ca1c5c5c7d9f053f655ab75d418.webp" alt="Montessori Busy Board" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Fashion Wanita (Tas)</span>
-                    <h3 class="product-name">Tas Bahu Les Catino Luxe Shoulder</h3>
-                    <p class="product-desc">Tampil Memukau Dan Jadi Pusat Perhatian Dengan Sentuhan Luxe Shoulder Bag Dari Les Catino! 👑✨.
-Siluet Kemewahan Nyata: Desain Struktur Yang Kokoh Memancarkan Kesan Mahal Dan Profesional Seketika.
-Aksen Logam Premium: Detail Perangkat Keras (Hardware) Emas/Perak Anti-karat Yang Menambah Daya Tarik Visual Yang Elegan.
-Kompartemen Ekstra Aman: Dilengkapi Pembatas Interior Yang Rapi Untuk Menjaga Barang Berharga Anda Tetap Terorganisir.sempurna Untuk Menemani Meeting Penting Dengan Klien Hingga Acara Gala Dinner Malam Ini.</p>
-                    <a href="https://s.shopee.co.id/8fPam2KVEd" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Mainan Anak</span>
+                    <h3 class="product-name">Mainan Dream Bubble Angel Tembakan Gelembung Sabun</h3>
+                    <p class="product-desc">Main Gelembung Tanpa Takut Sabun Tumpah! 🫧🚀 Bubble Gun Luar Angkasa Ini Punya 10 Lubang Otomatis (Gelembung Super Banyak), Lampu LED Keren, Dan 100% Anti-bocor Walau Diputar 360°. Pas Banget Buat Kado Anak! Cek Promonya Di Sini Sebelum Kehabisan.</p>
+                    <a href="https://s.shopee.co.id/2qRcWjBhSP" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 9 (Baru) -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80" alt="Celana Kulot High Waist" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-82251-mgyht7y5bs3t18.webp" alt="Kamera Digital Anak" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Bawahan Wanita</span>
-                    <h3 class="product-name">Celana Kulot High Waist</h3>
-                    <p class="product-desc">Celana kulot wanita berpotongan high waist berbahan scuba premium. Memberikan siluet kaki yang lebih jenjang dan sangat nyaman dipakai.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Mainan Edukasi</span>
+                    <h3 class="product-name">Mainan Laptop Anak Tablet Belajar</h3>
+                    <p class="product-desc">Dukung Fase Golden Age Si Kecil dengan Laptop Edukasi Pintar! Dilengkapi fitur interaktif seperti kuis berhitung, mengeja kata, dan musik untuk melatih motorik serta kognitif anak secara maksimal.</p>
+                    <a href="https://s.shopee.co.id/2g8CLJ7iSx" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
             
+            <!-- Kartu Produk 10 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?w=500&q=80" alt="Sweater Rajut Oversized" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98u-lz7bl79t1u6g08.webp" alt="Pasir Ajaib" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Pakaian Musim Dingin</span>
-                    <h3 class="product-name">Sweater Rajut Oversized</h3>
-                    <p class="product-desc">Sweater berbahan rajut tebal nan lembut dengan desain oversized. Memberikan kehangatan sekaligus tampilan estetik yang sangat kekinian.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Kebutuhan Belajar Anak</span>
+                    <h3 class="product-name">SAMPUL BUKU STIKER PVC FILM PELINDUNG BUKU</h3>
+                    <p class="product-desc">Terbuat dari bahan PP berkualitas tinggi, tahan lama tahan air dan tidak licin. Desain transparan, mudah untuk menemukan buku
+
+Film bening berperekat, mudah digunakan, untuk melindungi peta, buku, dokumen, dll. Mencegah kotoran dan kerusakan.
+
+Cocok untuk poster, peta, presentasi dan berbagai permukaan lainnya.</p>
+                    <a href="https://s.shopee.co.id/9pbXvyKa2y" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 11 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80" alt="Tas Ransel Kanvas" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98s-lyn4gep9rbig91.webp" alt="Puzzle Kayu 3D" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Tas Unisex</span>
-                    <h3 class="product-name">Tas Ransel Kanvas Minimalis</h3>
-                    <p class="product-desc">Tas ransel bergaya minimalis yang terbuat dari material kanvas awet. Dilengkapi banyak kompartemen untuk laptop dan kebutuhan esensial.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Peralatan Sekolah Anak</span>
+                    <h3 class="product-name">Aimilo Tempat Pensil Anak Laki Laki</h3>
+                    <p class="product-desc">Kotak Pensil Karakter Sangat Cocok Untuk Kado Ultah Anak. Bahan Timbul 3d Dan Halus. Tersedia Untuk Cowok Dan Cewek.Kotak Pensil Muat Untuk Penggaris Maksimal 20cm.Terdapat 3 Lapis/Bagian Untuk Pemisah Isi Kotak Pensil.Penjualan Produk Ini Hanya Tempat Pensil Saja Tidak Beserta Dengan Alat Tulisnya.</p>
+                    <a href="https://s.shopee.co.id/809tmK5eGk" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 12 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1614252209317-dc0c5544c700?w=500&q=80" alt="Sepatu Loafers Kulit" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134201-7rasf-m58jqmrtc4g231.webp" alt="Alphabet Puzzle" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Alas Kaki Pria</span>
-                    <h3 class="product-name">Sepatu Loafers Kulit Asli</h3>
-                    <p class="product-desc">Sepatu loafers pria berbahan kulit asli dengan insole empuk. Solusi tampil stylish, rapi, dan profesional dengan kenyamanan maksimal.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Pendukung Bakat Anak</span>
+                    <h3 class="product-name">SPEEDS Papan Seluncur Anak Swimming Board</h3>
+                    <p class="product-desc">Mengenalkan angka dan huruf lebih dini. Melatih koordinasi mata serta tangan melalui warna-warni cerah yang ramah anak.</p>
+                    <a href="https://s.shopee.co.id/2g8NRci3uA" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 13 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1583496922765-a86d2673d325?w=500&q=80" alt="Rok Plisket Panjang" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mc6o40brffm3df.webp" alt="Sleepsuit Bayi" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Bawahan Wanita</span>
-                    <h3 class="product-name">Rok Plisket Panjang Premium</h3>
-                    <p class="product-desc">Rok panjang dengan lipitan (plisket) permanen berbahan jatuh dan tidak menerawang. Sangat cantik dipadukan dengan kemeja atau blouse.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Kebutuhan Belajar Anak</span>
+                    <h3 class="product-name">Meja Belajar Lipat Anak Whiteboard</h3>
+                    <p class="product-desc">Meja Belajar Lipat Multifungsi yang dilengkapi Papan Whiteboard ini sangat cocok sekali untuk putra putri anda usia Balita hingga Sekolah Dasar (SD).
+
+
+
+Dapat Meningkatkan Minat dan Semangat Anak dalam Belajar.</p>
+                    <a href="https://s.shopee.co.id/30lDr6JXJ0" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 14 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1434389670869-c8751522c943?w=500&q=80" alt="Cardigan Wanita" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/sg-11134201-825ae-mg7cnnkdunm481.webp" alt="Krim Wajah Bayi" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Pakaian Luar Wanita</span>
-                    <h3 class="product-name">Cardigan Rajut Lembut</h3>
-                    <p class="product-desc">Cardigan rajut dengan detail kancing hidup di bagian depan. Menambah lapisan gaya yang manis untuk cuaca ber-AC atau sekadar hangout sore.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Pendukung Kreatifitas Bakat Anak</span>
+                    <h3 class="product-name">Premium Coloring Roll Gulungan Mewarnai 3M</h3>
+                    <p class="product-desc">4 topik utama, pola tidak berulang
+
+Menangkap Periode Sensitif Graffiti Anak, Menginspirasi Kreativitas Pertumbuhan
+
+Setiap kuas bisa melukis dan bermain.</p>
+                    <a href="https://s.shopee.co.id/W3sszCbW1" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 15 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&q=80" alt="Topi Bucket Corduroy" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98z-lnthj92z7laf08.webp" alt="Hampers Bayi" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Aksesoris Kepala</span>
-                    <h3 class="product-name">Topi Bucket Corduroy Retro</h3>
-                    <p class="product-desc">Topi bucket bergaya vintage dari material corduroy tebal. Melengkapi OOTD streetwear Anda sekaligus melindungi dari paparan sinar matahari.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Pendukung Kreatifitas Bakat Anak</span>
+                    <h3 class="product-name">VOOVA Plastic Crayon Krayon Untuk Gambar</h3>
+                    <p class="product-desc">Crayon mewarnai dengan kualitas tinggi! 
+
+pastikan crayon anak 
+
+ 
+
+kesayangan Anda menggunakan crayonlab keunggulan crayonlab 
+
+- crayon tidak mengotori tangan anak saat digunakan
+
+- non toxic/ tidak beracun 
+
+- tekstur crayon lunak dan lembut 
+
+- permukaan crayon halus 
+
+-hasil warna halus
+
+- tidak mengotori baju jika crayon bersentuhan dengan baju
+
+-mudah digunakan.</p>
+                    <a href="https://s.shopee.co.id/LkSidd5Tl" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 16 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=500&q=80" alt="Scarf Sutra Floral" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m441dggfe7bt3e.webp" alt="Topi Bayi" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Aksesoris</span>
-                    <h3 class="product-name">Scarf Sutra Motif Floral</h3>
-                    <p class="product-desc">Scarf ringan berbahan sutra sintetis yang super elegan. Bisa diaplikasikan di leher, aksesoris rambut, atau pemanis pada handle tas favorit Anda.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Pendukung Kreatifitas Bakat Anak</span>
+                    <h3 class="product-name">LCD Drawing Writing Tablet Board Digital Pad</h3>
+                    <p class="product-desc">Papan tulis tablet dengan ukuran layar LCD 8.5 Inchi yang dapat digunakan untuk menggambar,membuat tulisan, berhitung. Tablet ini sangat cocok untuk diberikan kepada anak-anak yang sedang dalam masa pertumbuhan dan mulai memasuki fase belajar menulis dan menggambar. Terbuat dari material plastik yang ringan dan ramah untuk anak. Dilengkapi stylus pen dengan ujung tip yang lembut sehingga aman dan tidak berbahaya untuk anak-anak. </p>
+                    <a href="https://s.shopee.co.id/60OpTf41MO" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 17 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=500&q=80" alt="Ikat Pinggang Kulit" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/sg-11134201-7reqg-m91p4gak02hd60.webp" alt="Matras Playmat" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Aksesoris Pria</span>
-                    <h3 class="product-name">Ikat Pinggang Kulit Premium</h3>
-                    <p class="product-desc">Sabuk pria berbahan kulit sapi asli berkualitas dengan gesper logam solid yang kokoh. Awet, elegan, cocok untuk celana formal maupun jeans.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Perlengkapan Bayi</span>
+                    <h3 class="product-name">Promo Tisu Mini Travel Size Karakter Lucu Tebal</h3>
+                    <p class="product-desc">Tisu Basah Mini Travel Size ini adalah solusi praktis untuk menjaga kebersihan di mana saja dan kapan saja!
+
+
+
+Dengan motif lucu pada kemasan, produk ini tidak hanya fungsional tetapi juga estetik.</p>
+                    <a href="https://s.shopee.co.id/1LczvSF6lZ" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
+            <!-- Kartu Produk 18 -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80" alt="Sepatu Heels" class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m5aax5p7pdaaa3.webp" alt="Macrame Kit" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">Alas Kaki Wanita</span>
-                    <h3 class="product-name">Sepatu Heels Pointed Toe</h3>
-                    <p class="product-desc">Sepatu hak tinggi model pointed toe klasik. Menggunakan bantalan sol yang dirancang ergonomis agar kaki tetap nyaman meski dipakai lama.</p>
-                    <a href="#" class="btn-affiliate">CEK Harga Spesial</a>
+                    <span class="category-tag">Peralatan Masak Lucu</span>
+                    <h3 class="product-name">Cetakan Shaker Nasi Bento Bola Bulat</h3>
+                    <p class="product-desc">Ubah bekal anak jadi lebih praktis dan menarik dengan Cetakan Shaker Nasi Bento Bola Bulat. Cukup masukkan nasi dan bahan pelengkap ke dalam cetakan, lalu shake (goyang-goyang) beberapa kali untuk mendapatkan tiga bola nasi mungil yang bulat sempurna seketika.</p>
+                    <a href="https://s.shopee.co.id/5q5PI37MLY" class="btn-affiliate">CEK Harga Spesial</a>
+                </div>
+            </div>
+
+                        <!-- Kartu Produk 19 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-822wm-mny2clbk1hqdd9.webp" alt="Macrame Kit" class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="category-tag">Kebutuhan Sekolah Anak</span>
+                    <h3 class="product-name">•	SAMPUL BUKU CUSTOM</h3>
+                    <p class="product-desc">Gak Zaman Lagi Punya Buku Yang Kembar Sama Orang Lain! Bikin Bukumis Makin Estetik Dengan Sampul Buku Custom! 🎨📚desain Suka-suka: Bebas Pakai Foto Sendiri, Karakter Anime Favorit, Idola K-pop, Nama, Hingga Kuotasi Penyemangat.bahan Premium Tahan Lama: Terbuat Dari Bahan Tebal, Anti-air (Waterproof), Dan Tidak Mudah Robek Untuk Perlindungan Maksimal.presisi & Pas: Ukuran Bisa Disesuaikan Dengan Jenis Buku Apa Saja (Buku Tulis Sekolah, Binder, Novel, Hingga Al-qur'an).bikin Semangat Belajar Dan Membaca Naik 100% Dengan Visual Buku Yang Kamu Banget!</p>
+                    <a href="https://s.shopee.co.id/AAEckoMY9l" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
@@ -541,7 +626,7 @@ Kompartemen Ekstra Aman: Dilengkapi Pembatas Interior Yang Rapi Untuk Menjaga Ba
     <section id="koneksi" class="social-section">
         <div class="section-header" style="margin-bottom: 0; position: relative; z-index: 2;">
             <h2>Tetap Terhubung</h2>
-            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Ikuti update rekomendasi produk fashion terbaru dari Sobat Affiliate. Jadilah yang pertama tahu tentang promo barang eksklusif.</p>
+            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Ikuti update rekomendasi produk anak terbaru dari Sobat Affiliate Kids. Jadilah yang pertama tahu tentang promo barang eksklusif.</p>
         </div>
         
         <div class="social-icons-container">
